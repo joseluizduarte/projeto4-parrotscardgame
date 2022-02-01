@@ -23,15 +23,40 @@
     justify-content: flex-start;
 }
 
-.pageMain__card {
+.card {
     width: 117px;
     height: 146px;
-    background-color: #A7E9AF;
     margin-bottom: 34px;
     margin-right: 17px;
     margin-left: 17px;
-    border-radius: 5px;
     margin: 24px ;
+    position: relative;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.backFace {
+    transform-origin: center;
+    transform: rotateY(180deg);
+}
+
+.backFace--visible {
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.frontFace--hidden {
+    transform-origin: center;
+    transform: rotateY(-180deg);
 }
 
 .pageMain__card__image {
