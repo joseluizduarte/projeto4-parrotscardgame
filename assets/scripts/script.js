@@ -8,7 +8,7 @@ function startGame(){
     let pageMain = document.querySelector(".pageMain");
     let gifs = ['bobrossparrot','explodyparrot','fiestaparrot','metalparrot','revertitparrot','tripletsparrot','unicornparrot'];
     gifs.sort(comparador);
-    gifs = gifs.slice(0,numberOfCards);
+    gifs = gifs.slice(0,numberOfCards/2);
     let cards = gifs.concat(gifs);
     cards = cards.sort(comparador);
     cards.forEach(
