@@ -17,7 +17,7 @@
 
 .pageMain {
     margin-top: 47px;
-    width: 60%;
+    max-width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
