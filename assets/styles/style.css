@@ -1,0 +1,40 @@
+.root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #EEF9BF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageHeader__title {
+    color: #75B79E;
+    margin-top: 40px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px;
+}
+
+.pageMain {
+    margin-top: 47px;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.pageMain__card {
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    margin-bottom: 34px;
+    margin-right: 17px;
+    margin-left: 17px;
+    border-radius: 5px;
+    margin: 24px ;
+}
+
+.pageMain__card__image {
+    width: 100px;
+    margin: 24px 7px 22px 10px;
+}
