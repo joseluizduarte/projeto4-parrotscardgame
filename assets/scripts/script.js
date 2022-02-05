@@ -85,9 +85,17 @@ function compararCartas(){
     }
 }
 
+function reiniciarJogo() {
+    let resposta = prompt("Deseja iniciar outra partida?");
+    if (resposta === 'Sim' || resposta === 'sim') {
+        iniciarPartida();
+    }
+}
+
 function verificarFimDeJogo() {
     if (cartasEscondidas.length===0) {
         alert(`Você ganhou em ${contadorJogada} jogadas`);
+        reiniciarJogo();
     }
 }
 
@@ -106,11 +114,12 @@ function fazerJogada(event){
     }
 }
 
-function startGame(){
+function iniciarPartida(){
     // let numeroCartas = perguntarNumeroDeCartas();
     let numeroCartas = 4;
     let imagens = sortearImagens(numeroCartas/2);
     cartasEscondidas = embaralharCartas(imagens);
+    document.querySelector(".pageMain").innerHTML="";
     cartasEscondidas.forEach(distribuirCarta);
     cartasEscondidas.forEach(adicionarEventListener);
 }
@@ -119,4 +128,4 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
 
-startGame();
+iniciarPartida();
