@@ -34,12 +34,12 @@ function embaralharCartas(imagens) {
 function distribuirCarta(carta) {
     let nomeImagem = carta.substring(0,carta.length-1);
     let pageMain = document.querySelector(".pageMain");
-    pageMain.innerHTML += `<div class='card' id='${carta}'>
-                                <div class='face frontFace'>\
+    pageMain.innerHTML += `<div class='card' id='${carta}' data-identifier='card'>
+                                <div class='face frontFace' data-identifier='front-face'>
                                     <img class='pageMain__card__image' src='assets/images/front.png' alt=''>
                                 </div>
-                                <div class='face backFace'>
-                                    <img class='pageMain__card__image' src='assets/images/${nomeImagem}.gif' alt=''>\
+                                <div class='face backFace' data-identifier='back-face'>
+                                    <img class='pageMain__card__image' src='assets/images/${nomeImagem}.gif' alt=''>
                                 </div>
                             </div>`
 }
