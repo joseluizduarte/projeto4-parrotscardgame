@@ -2,6 +2,8 @@ let contadorJogada = 0;
 let carta1;
 let carta2;
 let cartasEscondidas;
+let cronometro;
+let tempo = 0;
 
 function perguntarNumeroDeCartas(){
     let opcoesCartas = [4,6,8,10,12,14];
@@ -94,7 +96,8 @@ function reiniciarJogo() {
 
 function verificarFimDeJogo() {
     if (cartasEscondidas.length===0) {
-        alert(`Você ganhou em ${contadorJogada} jogadas`);
+        alert(`Você ganhou com ${contadorJogada} jogadas em ${tempo} segundos`);
+        clearInterval(cronometro);
         reiniciarJogo();
     }
 }
@@ -114,9 +117,16 @@ function fazerJogada(event){
     }
 }
 
+function atualizarCronometro() {
+    let elementoCronometro = document.querySelector(".pageHeader__cronometro");
+    tempo++;
+    elementoCronometro.innerHTML = `${tempo}`;
+}
+
 function iniciarPartida(){
     // let numeroCartas = perguntarNumeroDeCartas();
-    let numeroCartas = 4;
+    let numeroCartas =4;
+    cronometro = setInterval(atualizarCronometro, 1000);
     let imagens = sortearImagens(numeroCartas/2);
     cartasEscondidas = embaralharCartas(imagens);
     document.querySelector(".pageMain").innerHTML="";
