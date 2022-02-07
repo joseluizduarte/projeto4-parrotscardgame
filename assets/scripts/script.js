@@ -124,8 +124,7 @@ function atualizarCronometro() {
 }
 
 function iniciarPartida(){
-    // let numeroCartas = perguntarNumeroDeCartas();
-    let numeroCartas =4;
+    let numeroCartas = perguntarNumeroDeCartas();
     cronometro = setInterval(atualizarCronometro, 1000);
     let imagens = sortearImagens(numeroCartas/2);
     cartasEscondidas = embaralharCartas(imagens);
